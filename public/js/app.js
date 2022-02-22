@@ -2060,7 +2060,13 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Reference from published scripts
+
+
+__webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module './vendor/livewire-ui/modal'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())); // Reference from vendor
+
+
+__webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../vendor/livewire-ui/modal/resources/js/modal'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 /***/ }),
 

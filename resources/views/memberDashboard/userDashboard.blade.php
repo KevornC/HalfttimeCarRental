@@ -8,11 +8,11 @@ Dashboard
 @section('content')
  
     <div class="inline-block min-w-full py-2 mt-16 align-middle sm:px-6 lg:px-8">
-      <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+      <div class="overflow-hidden border-b border-gray-200 shadow ">
         <table class="min-w-full divide-y divide-gray-200">
-          <thead class="bg-blue-50">
+          <thead class="navcolor">
             <tr>
-              <th  colspan="5" scope="col" class="px-6 py-3 font-medium tracking-wider text-center text-gray-500 uppercase text-md">
+              <th  colspan="5" scope="col" class="px-6 py-3 font-bold tracking-wider text-center text-gray-900 uppercase text-md">
                 History
               </th>
             </tr>
@@ -40,7 +40,6 @@ Dashboard
             @forelse ($rental as $order )
             <?php
             $imageName=$order['vehicle']['image'];
-          // echo $imageName;
           ?>
            
             <tr>

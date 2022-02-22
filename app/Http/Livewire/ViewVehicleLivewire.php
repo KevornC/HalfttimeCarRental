@@ -34,7 +34,7 @@ class ViewVehicleLivewire extends Component
         $this->editMode=true;
     //    dd($id);
         $ch = curl_init();  //ch mean Curl handler .. here we initialize Curl
-        $url = 'http://192.168.0.12:8080/api/vehicle/edit/get/'.$id; //url section
+        $url = 'http://192.168.0.2:8080/api/vehicle/edit/get/'.$id; //url section
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         $result=curl_exec($ch);
@@ -75,7 +75,7 @@ class ViewVehicleLivewire extends Component
         // dd($vehicleData);
         $data = http_build_query($vehicleData);
         $ch = curl_init();  //ch mean Curl handler .. here we initialize Curl
-        $url = 'http://192.168.0.12:8080/api/vehicle/update/'.$this->vId; //url section
+        $url = 'http://192.168.0.2:8080/api/vehicle/update/'.$this->vId; //url section
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_POST,true);
         curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
@@ -88,7 +88,7 @@ class ViewVehicleLivewire extends Component
 
     public function delete($id){
         $ch = curl_init();
-        $url = 'http://192.168.0.12:8080/api/vehicle/delete/'.$id;
+        $url = 'http://192.168.0.2:8080/api/vehicle/delete/'.$id;
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         $result=curl_exec($ch);
@@ -98,7 +98,7 @@ class ViewVehicleLivewire extends Component
     public function render()
     {
         $ch = curl_init();  //ch mean Curl handler .. here we initialize Curl
-        $url = 'http://192.168.0.12:8080/api/vehicle/get'; //url section
+        $url = 'http://192.168.0.2:8080/api/vehicle/get'; //url section
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         $result=curl_exec($ch);

@@ -69,7 +69,7 @@ class LiveSignup extends ModalComponent
       // dd($memberSI);
         $data = http_build_query($memberSI);
         $ch = curl_init();
-        $url = 'http://192.168.0.12:8080/api/signup/member';
+        $url = 'http://192.168.0.2:8080/api/signup/member';
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_POST,true);
         curl_setopt($ch,CURLOPT_POSTFIELDS,$data);

@@ -41,16 +41,16 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-        'carImages' => [
+        'Uploads' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/carUploads'),
-            'url' => env('APP_URL').'/storage/carUploads',
+            'root' => storage_path('app/public/Uploads'),
+            'url' => env('APP_URL').'/storage/Uploads',
             'visibility' => 'public',
         ],
-        'docUploads' => [
+        'fileUploads' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/docUploads'),
-            'url' => env('APP_URL').'/storage/docUploads',
+            'root' => storage_path('app/public/fileUploads'),
+            'url' => env('APP_URL').'/storage/fileUploads',
             'visibility' => 'public',
         ],
 
@@ -80,8 +80,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('storage/carUploads') => storage_path('app/public/Uploads'),
-        public_path('storage/docUploads') => storage_path('app/public/fileUploads'),
+        public_path('storage/Uploads') => storage_path('app/public/Uploads'),
+        public_path('storage/fileUploads') => storage_path('app/public/fileUploads'),
     ],
 
 ];

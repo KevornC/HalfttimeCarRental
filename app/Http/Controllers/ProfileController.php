@@ -8,27 +8,23 @@ class ProfileController extends Controller
 {
     public function profile(){
         $mID=session()->get('member');
-        // dd($mID);
         $ch = curl_init();
-        $url = 'http://192.168.0.12:8080/api/user/dashboard/profile/'.$mID; //url section
+        $url = 'http://192.168.0.2:8080/api/member/profile/'.$mID; //url section
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         $result=curl_exec($ch);
         $profileInfo=json_decode($result,true);
-        // dd($profileInfo);
-        return view('userDashboard.profile',compact('profileInfo'));
+        return view('memberDashboard.profile',compact('profileInfo'));
     }
     public function profileEdit(){
         $mID=session()->get('member');
-        // dd($mID);
         $ch = curl_init();
-        $url = 'http://192.168.0.12:8080/api/user/dashboard/profile/'.$mID; //url section
+        $url = 'http://192.168.0.2:8080/api/member/profile/'.$mID; //url section
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         $result=curl_exec($ch);
         $profileInfo=json_decode($result,true);
-        // dd($profileInfo);
-        $info=array([
+        $profileInfo=array([
             'photo'=>$profileInfo['photo'],
             'fname'=>$profileInfo['fname'],
             'lname'=>$profileInfo['lname'],
@@ -39,24 +35,10 @@ class ProfileController extends Controller
             'coun'=>$profileInfo['country'],
             'gender'=>$profileInfo['gender'],
         ]);
-        // dd($info);
-        return view('userDashboard.profileEdit',compact('info'));
+        return view('memberDashboard.profileEdit',compact('profileInfo'));
     }
     
     public function profileUpdate(Request $request){
-        
-        // $this->validate($request,[
-            //     'firstname' => 'required',
-            //     'lastname'=>'required',
-            //     'tel'=>'required',
-            //     'email'=>'required',
-            //     'address'=>'required',
-            //     'trn'=>'required',
-            //     'country'=>'required'
-            // ],[
-                //     'tel.required'=>'Telephone is required'
-                // ]);
-                // dd($request->fname);
                 $info=array(
                     'photo'=>$request->photo,
                     'fname'=>$request->fname,
@@ -68,14 +50,13 @@ class ProfileController extends Controller
                     'trn'=>$request->trn,
                     'coun'=>$request->coun,
         );
-        // dd($info);
 
         $mID=session()->get('member');
 
         $data=http_build_query($info);
 
         $ch=curl_init();
-        $url='http://192.168.0.12:8080/api/user/dashboard/profile/update/'.$mID;
+        $url='http://192.168.0.2:8080/api/member/profile/update/'.$mID;
 
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_POST,true);
@@ -83,7 +64,6 @@ class ProfileController extends Controller
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
 
         $result=curl_exec($ch);
-        // dd($result);
         curl_close($ch);
 
         return redirect()->route('profile');

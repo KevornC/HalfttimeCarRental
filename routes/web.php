@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/halftimerental', function () {
     return view('homepage');
 });
-Route::get('halftimerental/aboutus',[App\Http\Controllers\HomeController::class,'about'])->name('aboutus');
+
 Route::get('halftimerental/contact',[App\Http\Controllers\HomeController::class,'contact'])->name('contact');
 Route::post('halftimerental/contact',[App\Http\Controllers\HelpCenterController::class,'postHelpCenter'])->name('Oncontact');
 Route::get('halftimerental',[App\Http\Controllers\HomeController::class,'homepage'])->name('homepage');
@@ -46,7 +46,6 @@ Route::middleware(['memberlogin'])->group(function(){
     Route::get('halftimerental/user/dashboard/profile',[App\Http\Controllers\ProfileController::class,'profile'])->name('profile');
     Route::get('halftimerental/user/dashboard/profile/edit',[App\Http\Controllers\ProfileController::class,'profileEdit'])->name('profileEdit');
     Route::post('halftimerental/user/dashboard/profile/update',[App\Http\Controllers\ProfileController::class,'profileUpdate'])->name('profileUpdate');
-    Route::get('halftimerental/user/dashboard/helpcenter',[App\Http\Controllers\HelpCenterController::class,'helpCenter'])->name('helpCenter');
     Route::get('halftimerental/user/dashboard/logout',[App\Http\Controllers\LoginController::class,'logoutUser'])->name('signoutUser');
     Route::get('halftimerental/user/dashboard/vehicle/detail/{id}',[App\Http\Controllers\OrderController::class,'vehicleDetail'])->name('vehicleDetails');
     Route::post('halftimerental/user/dashboard/vehicle/rent',[App\Http\Controllers\OrderController::class,'vehicleRent'])->name('vehicleRent');

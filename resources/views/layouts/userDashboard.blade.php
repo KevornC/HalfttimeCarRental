@@ -11,7 +11,7 @@
       }
       
       .navcolor{
-          background: #1D4B72;
+          background: #f3ca13;
       }
       .textcolor{
           color:#1D4B72;
@@ -34,68 +34,53 @@
 <body class="">
 <div class="flex h-screen overflow-hidden bg-white">
  
-  <!-- Static sidebar for desktop -->
   <div class="hidden md:flex md:flex-shrink-0">
     <div class="flex flex-col w-64">
-      <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex flex-col flex-grow pb-4 overflow-y-auto bg-gray-100">
-        <div class="px-4 pt-3 pb-3 navcolor">
-          <a href="{{route('homepage')}}"><img class="self-center w-10 h-10 rounded-full" src="{{url('image/logo.png')}}" />
+      <div class="flex flex-col flex-grow pb-4 overflow-y-auto bg-gray-800">
+        <div class="px-4 pt-3 pb-3 shadow-lg navcolor">
+          {{-- <a href="{{route('homepage')}}"><img class="self-center w-10 h-10 rounded-full" src="{{url('image/logo.png')}}" /> --}}
+            <a href="{{route('homepage')}}"><p class="text-xl font-bold pb-3 pt-4 text-gray-700"> Half Time Car Rental </p></a>
           
         </div>
-        <div class="flex justify-center w-full">
-          {{-- <img class="h-32 mt-10 rounded-full" src="{{url('image/propic.jpg')}}" alt="profile"> --}}
+        {{-- <div class="flex justify-center w-full">
         </div>
-        <div class="">
-          {{-- <a href="{{route('userDashboard')}}"><p class="mt-5 mb-10 font-bold text-center">Dashboard</p></a> --}}
-        </div>
+          --}}
         <div class="flex flex-col flex-grow mt-5">
-          <nav class="flex-1 px-2 mt-10 space-y-1 bg-gray-100">
-            <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+          <nav class="flex-1 px-2 mt-10 space-y-1 shadow-lg bg-gray-800">
         
-            <a href="{{route('userDashboard')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 border-l rounded-md hover:text-blue-800 hover:border-blue-500 hover:bg-blue-200 group">
-              <!--
-                Heroicon name: outline/home
-
-                Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
-              -->
+            <a href="{{route('userDashboard')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-400  rounded-md hover:text-gray-800 hover:border-blue-500 hover:bg-yellow-300 group">
+             
               <svg class="flex-shrink-0 w-6 h-6 mr-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
-              Home
+              DASHBOARD
             </a>
 
-            <a href="{{route('rentSearch')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 border-l rounded-md hover:text-blue-800 hover:border-blue-500 hover:bg-blue-200 group">
+            <a href="{{route('rentSearch')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-400  rounded-md hover:text-gray-800 hover:border-blue-500 hover:bg-yellow-300 group">
               <!-- Heroicon name: outline/users -->
               <svg class="flex-shrink-0 w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
-              Rent a Car
+              RENT
             </a>
 
            
-            <a href="{{route('profile')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 border-l rounded-md hover:text-blue-800 hover:border-blue-500 hover:bg-blue-200 group">
+            <a href="{{route('profile')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-400  rounded-md hover:text-gray-800 hover:border-blue-500 hover:bg-yellow-300 group">
               <!-- Heroicon name: outline/calendar -->
               <svg class="flex-shrink-0 w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              Edit Profile
+              USER PROFILE
             </a>
 
-            <a href="{{route('helpCenter')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 border-l rounded-md hover:text-blue-800 hover:border-blue-500 hover:bg-blue-200 group">
-               <!-- Heroicon name: outline/inbox -->
-              <svg class="flex-shrink-0 w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-              </svg>
-              Help Center
-            </a>
+ 
 
-            <a href="{{route('signoutUser')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 border-l rounded-md hover:text-blue-800 hover:border-blue-500 hover:bg-blue-200 group">
+            <a href="{{route('signoutUser')}}" class="flex items-center px-2 py-2 text-sm font-medium text-gray-400  rounded-md hover:text-gray-800 hover:border-blue-500 hover:bg-yellow-300 group">
               <!-- Heroicon name: outline/chart-bar -->
               <svg class="flex-shrink-0 w-6 h-6 mr-3 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
-              Logout
+              SIGNOUT
             </a>
           </nav>
         </div>
@@ -105,48 +90,15 @@
   
   
   <div class="flex flex-col flex-1 w-0 overflow-hidden">
-    <div class="flex justify-center flex-shrink-0 w-full h-16 navcolor">
-      
-      <div class="flex items-center justify-items-center">
-        <div class="flex flex-1">
-          <a href="{{route('homepage')}}"><p class="text-3xl font-bold text-white"> Half Time Car Rental </p></a>
-        </div>
-      </div>
-    </div>
+   
 
+   
     
-    {{-- search --}}
+    <div class="relative z-10 flex flex-shrink-0 h-20 navcolor shadow">
     
-    <div class="relative z-10 flex flex-shrink-0 h-20 bg-white shadow">
-      {{-- <button type="button" class="px-4 text-gray-500 border-r border-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden">
-        <span class="sr-only">Open sidebar</span>
-        <!-- Heroicon name: outline/menu-alt-2 -->
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-        </svg>
-      </button> --}}
       <div class="flex justify-center flex-1 px-4">
         <h1 class="mt-5 text-2xl font-semibold text-gray-900">@yield('header')</h1>
-        {{-- <div class="flex justify-center flex-1 w-full">
-          <form class="flex w-1/2 md:ml-0" action="#" method="GET">
-            <div class="relative w-full mt-2 text-gray-400 border-2 h-14 search focus-within:text-gray-600">
-               <input type="search" class="w-full px-4 py-2 mt-2 text-gray-800 focus:outline-none"
-               placeholder="search..." x-model="search">
-            </div>
-            <div>
-               <button type="submit" class="flex items-center justify-center w-12 mt-2 text-white rounded-r-lg h-14 navcolor"
-                     :class="(search.length > 0) ? 'bg-purple-500' : 'bg-gray-500 cursor-not-allowed'"
-                     :disabled="search.length == 0">
-                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                           d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                     </svg>
-               </button>
-            </div>
-          </form>
-        </div> --}}
-         
+          
       </div>
        
    </div>
@@ -156,18 +108,14 @@
         <div class="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
         </div>
         <div class="px-4 mx-auto sm:px-6 md:px-8">
-          <!-- Replace with your content -->
           <div class="py-4">
-            {{-- <div class="border-4 border-gray-200 border-dashed rounded-lg h-96"></div> --}}
             @yield('content')
           </div>
-          <!-- /End replace -->
         </div>
       </div>
     </main>
    
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <footer class="bg-white">
+    <footer class="bg-gray-100">
       <div class="px-4 py-4 mx-auto max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <div class="flex justify-center space-x-6 md:order-2">
           <a href="#" class="text-gray-400 hover:text-gray-500">
@@ -202,7 +150,7 @@
         </div>
         <div class="mt-8 md:mt-0 md:order-1">
           <p class="text-base text-center text-gray-400">
-            &copy; 2022 Neika Designz, Inc. All rights reserved.
+            &copy; 2022 created by Kevorn Callum. All rights reserved.
           </p>
         </div>
       </div>

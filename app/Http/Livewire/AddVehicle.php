@@ -54,7 +54,7 @@ class AddVehicle extends ModalComponent
         // dd($vehicleData);
         $data = http_build_query($vehicleData);
         $ch = curl_init();  //ch mean Curl handler .. here we initialize Curl
-        $url = 'http://192.168.0.12:8080/api/vehicle/add'; //url section
+        $url = 'http://192.168.0.2:8080/api/vehicle/add'; //url section
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_POST,true);
         curl_setopt($ch,CURLOPT_POSTFIELDS,$data);

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HelpCenterController extends Controller
 {
     public function helpCenter(){
-        return view('userDashboard.helpCenter');
+        return view('memberDashboard.helpCenter');
     }
     public function postHelpCenter(Request $request){
         $request->validate([
@@ -27,7 +27,7 @@ class HelpCenterController extends Controller
         $data=http_build_query($data);
         // dd($data);
         $ch=curl_init();
-        $url='http://192.168.0.12:8080/api/contact';
+        $url='http://192.168.0.2:8080/api/contact';
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_POST,true);
         curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
@@ -37,6 +37,6 @@ class HelpCenterController extends Controller
         $result=json_decode($result,true);
 
         return redirect()->back()->with('success','Email sent successfully');
-        // return view('userDashboard.helpCenter');
+        // return view('memberDashboard.helpCenter');
     }
 }

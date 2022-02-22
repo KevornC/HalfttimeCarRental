@@ -1,15 +1,10 @@
-<div>
- 
-
-	{{-- <div class=" "> --}}
-	<div class="grid grid-cols-2 h-screen bg-gray-200">
-		<div class="rounded bg-cover h-full"  style="background-image: url('../image/login.png')">
-			
-		</div>
-		<div class="mt-10 ">
+<div class="h-screen bg-cover "
+style="background-image: url('../image/hp.jpg')">
+	<div class="flex items-center justify-center">
+	<div class="rounded bg-white mt-24 ">
 			<h3 class="pt-10 text-2xl text-center font-bold">Login</h3>
-			<h3 class="mt-5 text-sm text-center">Don't have an account? <span class="text-blue-700 font-bold"><a href="{{route('showRegister')}}">Sign Up</a></span></h3>
-			<form wire:submit.prevent='submit' class="px-40 pt-6 pb-8 rounded">
+			<h3 class=" text-sm text-center">Don't have an account? <span class="text-blue-700 font-bold"><a href="{{route('showRegister')}}">Sign Up</a></span></h3>
+			<form wire:submit.prevent='submit' class="px-40 pt-6 pb-8 ">
 				<div class="mb-4">
 					<label class="block mb-2 text-sm font-bold text-gray-700" for="username">
 						Email
@@ -51,9 +46,6 @@
 				</div>
 				
 			</form>
-		
-		</div>
 	</div>
-{{-- </div> --}}
-
-</div>
+	</div>
+	</div>

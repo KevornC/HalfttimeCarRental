@@ -26,7 +26,7 @@ class LiveAdminLogin extends Component
       $data=$this->validate();
       $data=http_build_query($data);
       $ch = curl_init(); //ch mean Curl handler .. here we initialize Curl
-      $url = 'http://192.168.0.12:8080/api/login/admin'; //url section
+      $url = 'http://192.168.0.2:8080/api/login/admin'; //url section
       curl_setopt($ch,CURLOPT_URL,$url);
       curl_setopt($ch,CURLOPT_POST,true);
       curl_setopt($ch,CURLOPT_POSTFIELDS,$data);

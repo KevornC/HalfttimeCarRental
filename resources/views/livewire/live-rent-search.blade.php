@@ -17,8 +17,8 @@
                 <label for="" class="px-1 text-xs font-semibold text-black">Seating capacity</label>
                 <div class="flex">
                     <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none"><i class="text-lg text-gray-400 mdi mdi-account-outline"></i></div>
-                    <select  wire:model="seat" class="w-full py-2 pl-10 pr-3 -ml-10 border-2 border-gray-200 rounded-lg outline-none focus:border-indigo-500">
-                        <option>choose one</option>
+                    <select  wire:model="seat" class="text-gray-400 w-full py-2 pl-10 pr-3 -ml-10 border-2 border-gray-200 rounded-lg outline-none focus:border-indigo-500">
+                        <option>Choose one</option>
                         <option value="5">5</option>
                         <option value="7">7</option>
                         <option value="8">8</option>
@@ -29,7 +29,7 @@
                     <label for="" class="px-1 text-xs font-semibold text-black">Driver type</label>
                     <div class="flex">
                         <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none"><i class="text-lg text-gray-400 mdi mdi-account-outline"></i></div>
-                        <select  wire:model="dType" class="w-full py-2 pl-10 pr-3 -ml-10 border-2 border-gray-200 rounded-lg outline-none focus:border-indigo-500">
+                        <select  wire:model="dType" class="text-gray-400 w-full py-2 pl-10 pr-3 -ml-10 border-2 border-gray-200 rounded-lg outline-none focus:border-indigo-500">
                             <option>Choose one</option>
                             <option value="Right hand">Right hand</option>
                             <option value="Left hand">Left Hand</option>
@@ -47,8 +47,8 @@
                </div> 
          
                     <div class="flex justify-center">
-                        <button type="reset"  class="px-10 py-2 mr-6 font-bold text-black transition duration-300 ease-in-out bg-gray-300 rounded-sm mt-14 ">Clear</button>
-                        <button type="submit"  class="px-10 py-2 mr-6 font-bold text-black transition duration-300 ease-in-out bg-green-600 rounded-sm mt-14 ">Submit</button>
+                        <button type="reset"  class="px-10 py-2 mr-6 font-bold text-white transition duration-300 ease-in-out bg-red-400 hover:bg-red-600  rounded-sm mt-14 ">Clear</button>
+                        <button type="submit"  class="px-10 py-2 mr-6 font-bold text-white transition duration-300 ease-in-out bg-green-600 hover:bg-green-700 rounded-sm mt-14 ">Submit</button>
                     <div class="flex items-center justify-center mt-10">
                    
         </div>
@@ -61,7 +61,7 @@
   <table class="min-w-full divide-y divide-gray-200">
       <thead class="">
           <tr>
-            <th  colspan="5" scope="col" class="px-6 py-3 font-medium tracking-wider text-center text-gray-500 uppercase text-md">
+            <th  colspan="5" scope="col" class="navcolor px-6 py-3 font-bold tracking-wider text-center text-gray-500 uppercase text-md">
               Search Result
             </th>
           </tr>
@@ -92,13 +92,11 @@
      
               <?php
               $imageName=$result['image'];
-              // echo $imageName;
               ?>
             <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
                   <div class="flex-shrink-0 w-16 h-16">
-                    {{-- <img class="w-16 h-16 rounded-md" src='{{url("image/a.jpg")}}' alt="carimg"> --}}
                     <img class="w-16 h-16 rounded-md" src='{{url("storage/carUploads/carUploads/$imageName")}}' alt="carimg">
                   </div>
                 </div>
@@ -117,23 +115,15 @@
                 <a href="#" wire:click.prevent="vehichDetails({{$result['id']}})"  class="p-2 text-white bg-green-800 rounded-sm">
                   <button type="submit">view more</button></a>
                   
-                  {{--  <a href="#" wire:click.prevent="delete({{$result['id']}})" class="p-2 text-white bg-red-800 rounded-sm">  --}}
-                    {{--  <button type="submit">Remove</button></a>  --}}
-                  </td>
+                    </td>
                 </tr>
                 @empty
                 <tr>
               <td class="px-6 py-4 whitespace-nowrap">No Available Records</td>
             </tr>
-          
                 @endforelse
-              
-          
-          <!-- More people... -->
       </tbody>
   </table>
 </div>
-
-{{-- </div> --}}
     </div>
 </div>

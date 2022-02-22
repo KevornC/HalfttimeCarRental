@@ -15,9 +15,9 @@ Update your profile
     <div class="relative px-4 py-10 bg-white sm:rounded-1xl sm:p-20">
         @forelse ($info as $profileInfo)
         <?php
-        $photo=$profileInfo['photo'];
+         $photo=$profileInfo['photo'];
         ?>  
-        <img class="w-16 h-16 rounded-md" src='{{url("storage/carUploads/docUploads/$photo")}}' alt="profileimage">
+        <img class="w-16 h-16 rounded-md" src='{{url("../../storage/$photo")}}' alt="License">
         
         <form action="{{route('profileUpdate')}}" method="post">
             @csrf
@@ -56,7 +56,7 @@ Update your profile
                 <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none"><i class="text-lg text-gray-400 mdi mdi-account-outline"></i></div>
                     <input type="email" name="email" value="{{$profileInfo['email']}}"  class="w-full py-2 pl-10 pr-3 -ml-10 border-2 border-gray-200 rounded-lg outline-none focus:border-indigo-500" placeholder="example@gmail.com">
                 </div>
-                <label for="" class="px-1 text-xs font-semibold text-black">Upload image</label>
+                <label for="" class="px-1 text-xs font-semibold text-black">Upload License</label>
                     <div class="flex">
                         <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none"><i class="text-lg text-gray-400 mdi mdi-account-outline"></i></div>
                         <input  type="file" name='photo' value=""  class="w-full -ml-10 pl-10 pr-3 py-1.5 rounded-lg border-2 border-gray-400  outline-none focus:border-indigo-500">
@@ -110,25 +110,17 @@ Update your profile
                 <div>
                     @error('trn') <span class="text-red-600 error">{{ $message }}</span> @enderror
                 </div>
-                {{--  <label for="" class="px-1 text-xs font-semibold text-black">Upload driver's license</label>
-                <div class="flex">
-                    <div class="z-10 flex items-center justify-center w-10 pl-1 text-center pointer-events-none"><i class="text-lg text-gray-400 mdi mdi-account-outline"></i></div>
-                    <input  type="file" class="w-full py-2 pl-10 pr-3 -ml-10 border-2 border-gray-200 rounded-lg outline-none focus:border-indigo-500">
-                </div>  --}}
+              
             </div>
             @empty
             @endforelse
         </div>
-        {{--    --}}
         <div class="flex items-center justify-center mt-10">
-            <a href="{{route('userDashboard')}}"  class="px-10 py-2 mr-6 font-bold text-black transition duration-300 ease-in-out border-2 border-black rounded-sm mt-14">
+            <a href="{{route('userDashboard')}}"  class="px-10 py-2 mr-6 font-bold text-white bg-red-400 hover:bg-red-600 transition duration-300 ease-in-out  rounded-sm mt-14">
                 Cancel 
             </a>
-            {{--  <a href="">  --}}
-                <input type="submit" value="Update" class="px-10 py-2 mr-6 font-bold text-black transition duration-300 ease-in-out bg-green-600 rounded-sm cursor-pointer mt-14 ">
-                {{--  </a>  --}}
+                <input type="submit" value="Update" class="px-10 py-2 mr-6 font-bold text-white transition duration-300 ease-in-out bg-green-600 hover:bg-green-700 rounded-sm cursor-pointer mt-14 ">
                 </div>
-      {{--    --}}
         </form>
     </div>
   </div>

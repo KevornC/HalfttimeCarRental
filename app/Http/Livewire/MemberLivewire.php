@@ -10,7 +10,7 @@ class MemberLivewire extends Component
     public function render()
     {
         $ch = curl_init();
-        $url = '192.168.0.12:8080/api/member/get';
+        $url = '192.168.0.2:8080/api/member/get';
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         $result=curl_exec($ch);

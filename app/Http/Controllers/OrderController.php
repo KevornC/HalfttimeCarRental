@@ -14,7 +14,7 @@ class OrderController extends Controller
     //     $result=curl_exec($ch);
     //     $featured=$result;
     //     // dd($result);
-    //     return view('userDashboard.FeaturedVehicleDetails',compact('featured'));
+    //     return view('memberDashboard.FeaturedVehicleDetails',compact('featured'));
     // }
     
     public function rentFilterSearch(){   
@@ -22,13 +22,13 @@ class OrderController extends Controller
    }
    public function vehicleDetail($id){
     $ch = curl_init();  //ch mean Curl handler .. here we initialize Curl
-    $url = 'http://192.168.0.12:8080/api/vehicle/rent/filter/view/'.$id; //url section
+    $url = 'http://192.168.0.2:8080/api/vehicle/rent/filter/view/'.$id; //url section
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
     $result=curl_exec($ch);
     $vDetails=json_decode($result,true);
     // dd($vDetails);
-       return view('userDashboard.vehicleDetails',compact('vDetails'));
+       return view('memberDashboard.vehicleDetails',compact('vDetails'));
    }
 
    public function vehicleRent(Request $request){
@@ -49,7 +49,7 @@ class OrderController extends Controller
 
     $data = http_build_query($rentInfo);
     $ch = curl_init();  //ch mean Curl handler .. here we initialize Curl
-    $url = 'http://192.168.0.12:8080/api/vehicle/rent/'.$request->vId; //url section
+    $url = 'http://192.168.0.2:8080/api/vehicle/rent/'.$request->vId; //url section
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch,CURLOPT_POST,true);
     curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
@@ -58,12 +58,12 @@ class OrderController extends Controller
     curl_close($ch);
 
     
-    return view('userDashboard.applySuccess');
+    return view('memberDashboard.applySuccess');
 
    }
 
    public function rentHistory(){
-       return view('userDashboard.rentHistory');
+       return view('memberDashboard.rentHistory');
    }
 
    public function viewOL(){
